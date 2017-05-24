@@ -26,6 +26,7 @@ function getAPI(){
       individual += `<p><strong>State:</strong> ${zoo.state}</p>`
       individual += `<p><strong>Facility Type:</strong> ${zoo.facility}</p>`
       individual += "</div>"
+      individual += "</div>"
       html += individual
     })
     html += "</div>"
