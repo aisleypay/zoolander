@@ -1,0 +1,1848 @@
+  [1m[35m (49.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3992078689786171215);[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateZoos (20170524154017)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.0ms)[0m  [1m[35mCREATE TABLE "zoos" ("id" bigserial primary key, "name" character varying, "state" character varying, "type" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170524154017"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-05-24 15:40:40.576045"], ["updated_at", "2017-05-24 15:40:40.576045"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3992078689786171215)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (143.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "zoolander-api_development"[0m
+  [1m[35m (126.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "zoolander-api_test"[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3992078689786171215);[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateZoos (20170524154017)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "zoos" ("id" bigserial primary key, "name" character varying, "state" character varying, "facility" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170524154017"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-05-24 15:52:39.220445"], ["updated_at", "2017-05-24 15:52:39.220445"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3992078689786171215)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Alabama Gulf Coast Zoo"], ["state", "Alabama"], ["facility", "Regular"], ["created_at", "2017-05-24 15:52:52.028037"], ["updated_at", "2017-05-24 15:52:52.028037"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Audubon Bird Sanctuary"], ["state", "Alabama"], ["facility", "Bird Sanctuary"], ["created_at", "2017-05-24 15:52:52.031101"], ["updated_at", "2017-05-24 15:52:52.031101"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Alameda Park Zoo"], ["state", "New Mexico"], ["facility", "Park"], ["created_at", "2017-05-24 15:52:52.032936"], ["updated_at", "2017-05-24 15:52:52.032936"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Victory Rance"], ["state", "New Mexico"], ["facility", "Horse Zoo"], ["created_at", "2017-05-24 15:52:52.034543"], ["updated_at", "2017-05-24 15:52:52.034543"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "The Whale Museum"], ["state", "Washington"], ["facility", "Whales"], ["created_at", "2017-05-24 15:52:52.036272"], ["updated_at", "2017-05-24 15:52:52.036272"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2017-05-24 11:53:34 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/gabystern/.rvm/gems/ruby-2.3.4/gems/railties-5.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/gabystern/.rvm/gems/ruby-2.3.4/gems/railties-5.1.1/lib/rails/templates/rails/welcome/index.html.erb (4.8ms)
+Completed 200 OK in 15ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2017-05-24 11:53:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/index" for 127.0.0.1 at 2017-05-24 11:53:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/zoo" for 127.0.0.1 at 2017-05-24 11:53:51 -0400
+  
+LoadError (Unable to autoload constant Api::V1::ZooController, expected /Users/gabystern/Development/flatiron_labs/module_3_JS/zoolander/zoolander-api/app/controllers/api/v1/zoo_controller.rb to define it):
+  
+activesupport (5.1.1) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+activesupport (5.1.1) lib/active_support/dependencies.rb:202:in `const_missing'
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:271:in `const_get'
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:271:in `block in constantize'
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:267:in `constantize'
+activesupport (5.1.1) lib/active_support/dependencies.rb:582:in `get'
+activesupport (5.1.1) lib/active_support/dependencies.rb:613:in `constantize'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:82:in `controller_class'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/index" for 127.0.0.1 at 2017-05-24 11:54:14 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 11:54:25 -0400
+  
+ActionController::RoutingError (uninitialized constant Api::V1::ZoosController):
+  
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:271:in `const_get'
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:271:in `block in constantize'
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:82:in `controller_class'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 11:54:58 -0400
+  
+ActionController::RoutingError (uninitialized constant Api::V1::ZoosController):
+  
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:271:in `const_get'
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:271:in `block in constantize'
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:82:in `controller_class'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 11:55:11 -0400
+  
+ActionController::RoutingError (uninitialized constant Api::V1::ZoosController):
+  
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:271:in `const_get'
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:271:in `block in constantize'
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:82:in `controller_class'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 11:55:22 -0400
+  
+ActionController::RoutingError (uninitialized constant Api::V1::ZoosController):
+  
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:271:in `const_get'
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:271:in `block in constantize'
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.1) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:82:in `controller_class'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 11:55:44 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (1.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 23ms (Views: 10.3ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 11:58:44 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 18ms (Views: 8.6ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 12:00:21 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (0.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 17ms (Views: 8.6ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 12:00:25 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (0.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 12:01:15 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (0.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 12:01:55 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (0.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 12:02:31 -0400
+Processing by Api::V1::ZoosController#index as HTML
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `zoosSerializer' for #<Api::V1::ZoosController:0x007fdb33800f00>):
+  
+app/controllers/api/v1/zoos_controller.rb:4:in `index'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 12:02:58 -0400
+Processing by Api::V1::ZoosController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant Api::V1::ZoosController::ZoosSerializer):
+  
+app/controllers/api/v1/zoos_controller.rb:4:in `index'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 12:03:50 -0400
+Processing by Api::V1::ZoosController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant Api::V1::ZoosController::ZoosSerializer):
+  
+app/controllers/api/v1/zoos_controller.rb:4:in `index'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 12:05:41 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (0.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 17ms (Views: 7.6ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 12:46:22 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 20ms (Views: 9.2ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 12:49:21 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (0.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 16ms (Views: 7.1ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 12:51:55 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 18ms (Views: 8.3ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 12:54:33 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (0.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 17ms (Views: 7.6ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 12:54:50 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (0.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 12:54:57 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 12:56:08 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (0.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 12:57:00 -0400
+Processing by Api::V1::ZoosController#index as HTML
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant Api::V1::ZoosController::ZooSerializer):
+  
+app/controllers/api/v1/zoos_controller.rb:4:in `index'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 12:58:09 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 17ms (Views: 8.7ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 12:58:54 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (0.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 15ms (Views: 7.7ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 12:59:01 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (0.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 15ms (Views: 7.0ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 12:59:36 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (0.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 16ms (Views: 8.0ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 12:59:55 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (0.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 15ms (Views: 6.6ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/api/v1/zoos?callback=jQuery310021453906144822388_1495649773365&_=1495649773366" for 127.0.0.1 at 2017-05-24 14:16:13 -0400
+Processing by Api::V1::ZoosController#index as */*
+  Parameters: {"callback"=>"jQuery310021453906144822388_1495649773365", "_"=>"1495649773366"}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 35ms (Views: 19.4ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/api/v1/zoos?callback=jQuery31002016995299119002_1495649820911&_=1495649820912" for 127.0.0.1 at 2017-05-24 14:17:00 -0400
+Processing by Api::V1::ZoosController#index as */*
+  Parameters: {"callback"=>"jQuery31002016995299119002_1495649820911", "_"=>"1495649820912"}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos?callback=jQuery31009284512542092889_1495649826853&_=1495649826854" for 127.0.0.1 at 2017-05-24 14:17:06 -0400
+Processing by Api::V1::ZoosController#index as */*
+  Parameters: {"callback"=>"jQuery31009284512542092889_1495649826853", "_"=>"1495649826854"}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos?callback=jQuery310028191915395851264_1495649829922&_=1495649829923" for 127.0.0.1 at 2017-05-24 14:17:09 -0400
+Processing by Api::V1::ZoosController#index as */*
+  Parameters: {"callback"=>"jQuery310028191915395851264_1495649829922", "_"=>"1495649829923"}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos?callback=jQuery310017915876326760882_1495650087849&_=1495650087850" for 127.0.0.1 at 2017-05-24 14:21:27 -0400
+Processing by Api::V1::ZoosController#index as */*
+  Parameters: {"callback"=>"jQuery310017915876326760882_1495650087849", "_"=>"1495650087850"}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos?callback=jQuery31003624031557447658_1495650095602&_=1495650095603" for 127.0.0.1 at 2017-05-24 14:21:35 -0400
+Processing by Api::V1::ZoosController#index as */*
+  Parameters: {"callback"=>"jQuery31003624031557447658_1495650095602", "_"=>"1495650095603"}
+  [1m[36mZoo Load (0.9ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/zoos?callback=jQuery31008222505355504055_1495650223924&_=1495650223925" for 127.0.0.1 at 2017-05-24 14:23:43 -0400
+Processing by Api::V1::ZoosController#index as */*
+  Parameters: {"callback"=>"jQuery31008222505355504055_1495650223924", "_"=>"1495650223925"}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos?callback=jQuery310022036228847674622_1495650226672&_=1495650226673" for 127.0.0.1 at 2017-05-24 14:23:46 -0400
+Processing by Api::V1::ZoosController#index as */*
+  Parameters: {"callback"=>"jQuery310022036228847674622_1495650226672", "_"=>"1495650226673"}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos?callback=jQuery310016883725344829448_1495650230698&_=1495650230699" for 127.0.0.1 at 2017-05-24 14:23:50 -0400
+Processing by Api::V1::ZoosController#index as */*
+  Parameters: {"callback"=>"jQuery310016883725344829448_1495650230698", "_"=>"1495650230699"}
+  [1m[36mZoo Load (1.0ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 14:24:59 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos?callback=jQuery3100932765133692739_1495650342634&_=1495650342635" for 127.0.0.1 at 2017-05-24 14:25:42 -0400
+Processing by Api::V1::ZoosController#index as */*
+  Parameters: {"callback"=>"jQuery3100932765133692739_1495650342634", "_"=>"1495650342635"}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos?callback=jQuery31002932835079203251_1495650468013&_=1495650468014" for 127.0.0.1 at 2017-05-24 14:27:48 -0400
+Processing by Api::V1::ZoosController#index as */*
+  Parameters: {"callback"=>"jQuery31002932835079203251_1495650468013", "_"=>"1495650468014"}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos?callback=jQuery31002969369665292494_1495650567555&_=1495650567556" for 127.0.0.1 at 2017-05-24 14:29:27 -0400
+Processing by Api::V1::ZoosController#index as */*
+  Parameters: {"callback"=>"jQuery31002969369665292494_1495650567555", "_"=>"1495650567556"}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 14:29:34 -0400
+Processing by Api::V1::ZoosController#index as */*
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos?callback=jQuery31009641692383379115_1495650600178&_=1495650600179" for 127.0.0.1 at 2017-05-24 14:30:00 -0400
+Processing by Api::V1::ZoosController#index as */*
+  Parameters: {"callback"=>"jQuery31009641692383379115_1495650600178", "_"=>"1495650600179"}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos?callback=jQuery31006110655996725554_1495650828834&_=1495650828835" for 127.0.0.1 at 2017-05-24 14:33:48 -0400
+Processing by Api::V1::ZoosController#index as */*
+  Parameters: {"callback"=>"jQuery31006110655996725554_1495650828834", "_"=>"1495650828835"}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos?callback=jQuery31007001907433576764_1495650896844&_=1495650896845" for 127.0.0.1 at 2017-05-24 14:34:56 -0400
+Processing by Api::V1::ZoosController#index as */*
+  Parameters: {"callback"=>"jQuery31007001907433576764_1495650896844", "_"=>"1495650896845"}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/zoos?callback=jQuery310053436559004834_1495650933470&_=1495650933471" for 127.0.0.1 at 2017-05-24 14:36:07 -0400
+Processing by Api::V1::ZoosController#index as */*
+  Parameters: {"callback"=>"jQuery310053436559004834_1495650933470", "_"=>"1495650933471"}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos?callback=jQuery310053436559004834_1495650933472&_=1495650933473" for 127.0.0.1 at 2017-05-24 14:39:11 -0400
+Processing by Api::V1::ZoosController#index as */*
+  Parameters: {"callback"=>"jQuery310053436559004834_1495650933472", "_"=>"1495650933473"}
+  [1m[36mZoo Load (1.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 1.5ms)
+
+
+Started OPTIONS "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 14:39:18 -0400
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/zoos"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 14:41:19 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT  "zoos".* FROM "zoos" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/api/v1/zoos?callback=jQuery310023504776115920922_1495651283695&_=1495651283696" for 127.0.0.1 at 2017-05-24 14:42:21 -0400
+Completed 500 Internal Server Error in 62028ms (ActiveRecord: 6.3ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `index'
+app/controllers/api/v1/zoos_controller.rb:5:in `index'
+Processing by Api::V1::ZoosController#index as */*
+  Parameters: {"callback"=>"jQuery310023504776115920922_1495651283695", "_"=>"1495651283696"}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+Completed 500 Internal Server Error in 42750ms (Views: 18.9ms | ActiveRecord: 6.2ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `index'
+app/controllers/api/v1/zoos_controller.rb:5:in `index'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 14:43:22 -0400
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (0.78ms)
+Completed 200 OK in 30ms (Views: 20.2ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/api/v1/zoos?callback=jQuery31006354799505663575_1495651422958&_=1495651422959" for 127.0.0.1 at 2017-05-24 14:43:43 -0400
+Processing by Api::V1::ZoosController#index as */*
+  Parameters: {"callback"=>"jQuery31006354799505663575_1495651422958", "_"=>"1495651422959"}
+  [1m[36mZoo Load (0.9ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.07ms)
+Completed 200 OK in 26ms (Views: 12.4ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/api/v1/zoos?callback=jQuery31006806643593485799_1495651463218&_=1495651463219" for 127.0.0.1 at 2017-05-24 14:44:23 -0400
+Processing by Api::V1::ZoosController#index as */*
+  Parameters: {"callback"=>"jQuery31006806643593485799_1495651463218", "_"=>"1495651463219"}
+  [1m[36mZoo Load (1.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.33ms)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 14:44:47 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.04ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 14:46:46 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.07ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 14:47:43 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (0.64ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 14:48:02 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (0.89ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 14:48:46 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.33ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 14:49:16 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (2.0ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.05ms)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 14:49:34 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.16ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 14:58:18 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.78ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 14:58:27 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.51ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 14:58:50 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.76ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 14:58:56 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.48ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 14:59:45 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.27ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:00:01 -0400
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:00:01 -0400
+Processing by Api::V1::ZoosController#create as */*
+Processing by Api::V1::ZoosController#create as HTML
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  Parameters: {"zoo"=>{}}
+  
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+ActionController::ParameterMissing (param is missing or the value is empty: zoo):
+  
+  
+ActionController::ParameterMissing (param is missing or the value is empty: zoo):
+app/controllers/api/v1/zoos_controller.rb:18:in `zoo_params'
+app/controllers/api/v1/zoos_controller.rb:11:in `create'
+  
+app/controllers/api/v1/zoos_controller.rb:18:in `zoo_params'
+app/controllers/api/v1/zoos_controller.rb:11:in `create'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:00:24 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.23ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:00:32 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"zoo"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: zoo):
+  
+app/controllers/api/v1/zoos_controller.rb:18:in `zoo_params'
+app/controllers/api/v1/zoos_controller.rb:11:in `create'
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:02:10 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"zoo"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: zoo):
+  
+app/controllers/api/v1/zoos_controller.rb:18:in `zoo_params'
+app/controllers/api/v1/zoos_controller.rb:11:in `create'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:02:13 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.03ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:02:42 -0400
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:02:42 -0400
+Processing by Api::V1::ZoosController#create as HTML
+Processing by Api::V1::ZoosController#create as */*
+  Parameters: {"zoo"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+  
+ActionController::ParameterMissing (param is missing or the value is empty: zoo):
+ActionController::ParameterMissing (param is missing or the value is empty: zoo):
+  
+  
+app/controllers/api/v1/zoos_controller.rb:18:in `zoo_params'
+app/controllers/api/v1/zoos_controller.rb:11:in `create'
+app/controllers/api/v1/zoos_controller.rb:18:in `zoo_params'
+app/controllers/api/v1/zoos_controller.rb:11:in `create'
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:03:16 -0400
+Processing by Api::V1::ZoosController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: zoo):
+  
+app/controllers/api/v1/zoos_controller.rb:18:in `zoo_params'
+app/controllers/api/v1/zoos_controller.rb:11:in `create'
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:03:16 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"zoo"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: zoo):
+  
+app/controllers/api/v1/zoos_controller.rb:18:in `zoo_params'
+app/controllers/api/v1/zoos_controller.rb:11:in `create'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:03:16 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (0.95ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:05:34 -0400
+Processing by Api::V1::ZoosController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: zoo):
+  
+app/controllers/api/v1/zoos_controller.rb:18:in `zoo_params'
+app/controllers/api/v1/zoos_controller.rb:11:in `create'
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:05:34 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"zoo"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: zoo):
+  
+app/controllers/api/v1/zoos_controller.rb:18:in `zoo_params'
+app/controllers/api/v1/zoos_controller.rb:11:in `create'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:05:34 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (2.8ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.48ms)
+Completed 200 OK in 36ms (Views: 32.8ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:06:03 -0400
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:06:03 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"zoo"=>{}}
+Processing by Api::V1::ZoosController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  Parameters: {"name"=>"Bronx Zoo", "state"=>"New York", "facility"=>"Wildlife"}
+  
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+ActionController::ParameterMissing (param is missing or the value is empty: zoo):
+  
+  
+app/controllers/api/v1/zoos_controller.rb:18:in `zoo_params'
+app/controllers/api/v1/zoos_controller.rb:11:in `create'
+ActionController::ParameterMissing (param is missing or the value is empty: zoo):
+  
+app/controllers/api/v1/zoos_controller.rb:18:in `zoo_params'
+app/controllers/api/v1/zoos_controller.rb:11:in `create'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:10:35 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (3.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.5ms)
+Completed 200 OK in 42ms (Views: 32.2ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:10:44 -0400
+Processing by Api::V1::ZoosController#create as */*
+  Parameters: {"name"=>"Bronx Zoo", "state"=>"New York", "facility"=>"Wildlife"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: zoo):
+  
+app/controllers/api/v1/zoos_controller.rb:18:in `zoo_params'
+app/controllers/api/v1/zoos_controller.rb:11:in `create'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:10:59 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.9ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.67ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:11:09 -0400
+Processing by Api::V1::ZoosController#create as */*
+  Parameters: {"name"=>"Bronx Zoo", "state"=>"New York", "facility"=>"Wildlife"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: zoo):
+  
+app/controllers/api/v1/zoos_controller.rb:18:in `zoo_params'
+app/controllers/api/v1/zoos_controller.rb:11:in `create'
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:11:09 -0400
+Processing by Api::V1::ZoosController#create as HTML
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: zoo):
+  
+app/controllers/api/v1/zoos_controller.rb:18:in `zoo_params'
+app/controllers/api/v1/zoos_controller.rb:11:in `create'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:13:53 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.43ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:14:02 -0400
+Error occurred while parsing request parameters.
+Contents:
+
+name=Bronx%20Zoo&state=New%20York&facility=w
+  
+ActionDispatch::Http::Parameters::ParseError (822: unexpected token at 'name=Bronx%20Zoo&state=New%20York&facility=w'):
+  
+actionpack (5.1.1) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
+actionpack (5.1.1) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:358:in `block in POST'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:357:in `POST'
+actionpack (5.1.1) lib/action_controller/metal/params_wrapper.rb:286:in `_wrapper_enabled?'
+actionpack (5.1.1) lib/action_controller/metal/params_wrapper.rb:235:in `process_action'
+activerecord (5.1.1) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.1) lib/abstract_controller/base.rb:124:in `process'
+actionpack (5.1.1) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.1) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:15:35 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (2.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.27ms)
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:22:48 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.52ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:22:57 -0400
+Error occurred while parsing request parameters.
+Contents:
+
+name=Bronx%20Zoo&state=New%20York&facility=Wildlife
+  
+ActionDispatch::Http::Parameters::ParseError (822: unexpected token at 'name=Bronx%20Zoo&state=New%20York&facility=Wildlife'):
+  
+actionpack (5.1.1) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
+actionpack (5.1.1) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:358:in `block in POST'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:357:in `POST'
+actionpack (5.1.1) lib/action_controller/metal/params_wrapper.rb:286:in `_wrapper_enabled?'
+actionpack (5.1.1) lib/action_controller/metal/params_wrapper.rb:235:in `process_action'
+activerecord (5.1.1) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.1) lib/abstract_controller/base.rb:124:in `process'
+actionpack (5.1.1) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.1) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:23:14 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.34ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:23:29 -0400
+Error occurred while parsing request parameters.
+Contents:
+
+name=Bronx%20Zoo&state=New%20York&facility=Wildlife
+  
+ActionDispatch::Http::Parameters::ParseError (822: unexpected token at 'name=Bronx%20Zoo&state=New%20York&facility=Wildlife'):
+  
+actionpack (5.1.1) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
+actionpack (5.1.1) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:358:in `block in POST'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:357:in `POST'
+actionpack (5.1.1) lib/action_controller/metal/params_wrapper.rb:286:in `_wrapper_enabled?'
+actionpack (5.1.1) lib/action_controller/metal/params_wrapper.rb:235:in `process_action'
+activerecord (5.1.1) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.1) lib/abstract_controller/base.rb:124:in `process'
+actionpack (5.1.1) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.1) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:23:50 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"zoo"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: zoo):
+  
+app/controllers/api/v1/zoos_controller.rb:18:in `zoo_params'
+app/controllers/api/v1/zoos_controller.rb:11:in `create'
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:29:46 -0400
+Error occurred while parsing request parameters.
+Contents:
+
+name=Bronx%20Zoo&state=New%20York&facility=Wildlife
+  
+ActionDispatch::Http::Parameters::ParseError (822: unexpected token at 'name=Bronx%20Zoo&state=New%20York&facility=Wildlife'):
+  
+actionpack (5.1.1) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
+actionpack (5.1.1) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:358:in `block in POST'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:357:in `POST'
+actionpack (5.1.1) lib/action_controller/metal/params_wrapper.rb:286:in `_wrapper_enabled?'
+actionpack (5.1.1) lib/action_controller/metal/params_wrapper.rb:235:in `process_action'
+activerecord (5.1.1) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.1) lib/abstract_controller/base.rb:124:in `process'
+actionpack (5.1.1) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.1) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:29:46 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.1ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.25ms)
+Completed 200 OK in 20ms (Views: 15.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:29:48 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (2.0ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.61ms)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:29:56 -0400
+Error occurred while parsing request parameters.
+Contents:
+
+name=Bronx%20Zoo&state=New%20York&facility=Wildlife
+  
+ActionDispatch::Http::Parameters::ParseError (822: unexpected token at 'name=Bronx%20Zoo&state=New%20York&facility=Wildlife'):
+  
+actionpack (5.1.1) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
+actionpack (5.1.1) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:358:in `block in POST'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:357:in `POST'
+actionpack (5.1.1) lib/action_controller/metal/params_wrapper.rb:286:in `_wrapper_enabled?'
+actionpack (5.1.1) lib/action_controller/metal/params_wrapper.rb:235:in `process_action'
+activerecord (5.1.1) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.1) lib/abstract_controller/base.rb:124:in `process'
+actionpack (5.1.1) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.1) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:35:20 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.19ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:35:28 -0400
+Error occurred while parsing request parameters.
+Contents:
+
+name=Bronx%20Zoo&state=New%20York&facility=Wildlife
+  
+ActionDispatch::Http::Parameters::ParseError (822: unexpected token at 'name=Bronx%20Zoo&state=New%20York&facility=Wildlife'):
+  
+actionpack (5.1.1) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
+actionpack (5.1.1) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:358:in `block in POST'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:357:in `POST'
+actionpack (5.1.1) lib/action_controller/metal/params_wrapper.rb:286:in `_wrapper_enabled?'
+actionpack (5.1.1) lib/action_controller/metal/params_wrapper.rb:235:in `process_action'
+activerecord (5.1.1) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.1) lib/abstract_controller/base.rb:124:in `process'
+actionpack (5.1.1) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.1) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:39:01 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.41ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:58:23 -0400
+Error occurred while parsing request parameters.
+Contents:
+
+name=Bronx%20Zoo&state=New%20York&facility=Wildlife
+  
+ActionDispatch::Http::Parameters::ParseError (822: unexpected token at 'name=Bronx%20Zoo&state=New%20York&facility=Wildlife'):
+  
+actionpack (5.1.1) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
+actionpack (5.1.1) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:358:in `block in POST'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:357:in `POST'
+actionpack (5.1.1) lib/action_controller/metal/params_wrapper.rb:286:in `_wrapper_enabled?'
+actionpack (5.1.1) lib/action_controller/metal/params_wrapper.rb:235:in `process_action'
+activerecord (5.1.1) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.1) lib/abstract_controller/base.rb:124:in `process'
+actionpack (5.1.1) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.1) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:58:24 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.35ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:58:44 -0400
+Error occurred while parsing request parameters.
+Contents:
+
+{name: Bronx Zoo, state: New York, facility: Wildlife}
+  
+ActionDispatch::Http::Parameters::ParseError (822: unexpected token at '{name: Bronx Zoo, state: New York, facility: Wildlife}'):
+  
+actionpack (5.1.1) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
+actionpack (5.1.1) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:358:in `block in POST'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:357:in `POST'
+actionpack (5.1.1) lib/action_controller/metal/params_wrapper.rb:286:in `_wrapper_enabled?'
+actionpack (5.1.1) lib/action_controller/metal/params_wrapper.rb:235:in `process_action'
+activerecord (5.1.1) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.1) lib/abstract_controller/base.rb:124:in `process'
+actionpack (5.1.1) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.1) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:59:49 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.89ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 15:59:59 -0400
+Error occurred while parsing request parameters.
+Contents:
+
+{name: "Bronx Zoo", state: "New York", facility: "Wildlife"}
+  
+ActionDispatch::Http::Parameters::ParseError (822: unexpected token at '{name: "Bronx Zoo", state: "New York", facility: "Wildlife"}'):
+  
+actionpack (5.1.1) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
+actionpack (5.1.1) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:358:in `block in POST'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:357:in `POST'
+actionpack (5.1.1) lib/action_controller/metal/params_wrapper.rb:286:in `_wrapper_enabled?'
+actionpack (5.1.1) lib/action_controller/metal/params_wrapper.rb:235:in `process_action'
+activerecord (5.1.1) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.1) lib/abstract_controller/base.rb:124:in `process'
+actionpack (5.1.1) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.1) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 16:02:08 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.51ms)
+Completed 200 OK in 45ms (Views: 35.4ms | ActiveRecord: 12.8ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 16:03:05 -0400
+Error occurred while parsing request parameters.
+Contents:
+
+{name: "Bronx Zoo", state: "New York", facility: "Wildlife"}
+  
+ActionDispatch::Http::Parameters::ParseError (822: unexpected token at '{name: "Bronx Zoo", state: "New York", facility: "Wildlife"}'):
+  
+actionpack (5.1.1) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
+actionpack (5.1.1) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:358:in `block in POST'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch'
+rack (2.0.3) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.1.1) lib/action_dispatch/http/request.rb:357:in `POST'
+actionpack (5.1.1) lib/action_controller/metal/params_wrapper.rb:286:in `_wrapper_enabled?'
+actionpack (5.1.1) lib/action_controller/metal/params_wrapper.rb:235:in `process_action'
+activerecord (5.1.1) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.1) lib/abstract_controller/base.rb:124:in `process'
+actionpack (5.1.1) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.1) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 16:03:05 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.9ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.1ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 16:03:30 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"Bronx Zoo", "state"=>"New York", "facility"=>"Wildlife", "zoo"=>{"name"=>"Bronx Zoo", "state"=>"New York", "facility"=>"Wildlife"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bronx Zoo"], ["state", "New York"], ["facility", "Wildlife"], ["created_at", "2017-05-24 20:03:30.546962"], ["updated_at", "2017-05-24 20:03:30.546962"]]
+  [1m[35m (115.6ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.5ms)
+Completed 200 OK in 124ms (Views: 3.2ms | ActiveRecord: 117.1ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 16:05:01 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.06ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 16:05:24 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.35ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 16:05:58 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"Central Park Zoo", "state"=>"New York", "facility"=>"City", "zoo"=>{"name"=>"Central Park Zoo", "state"=>"New York", "facility"=>"City"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Central Park Zoo"], ["state", "New York"], ["facility", "City"], ["created_at", "2017-05-24 20:05:58.016686"], ["updated_at", "2017-05-24 20:05:58.016686"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.43ms)
+Completed 200 OK in 9ms (Views: 1.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 16:07:00 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.79ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 16:07:32 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"Butterfly Place", "state"=>"Massachusetts", "facility"=>"Insect Zoo", "zoo"=>{"name"=>"Butterfly Place", "state"=>"Massachusetts", "facility"=>"Insect Zoo"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Butterfly Place"], ["state", "Massachusetts"], ["facility", "Insect Zoo"], ["created_at", "2017-05-24 20:07:32.666139"], ["updated_at", "2017-05-24 20:07:32.666139"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.4ms)
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 16:14:43 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.61ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 16:15:06 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"Franklin Park Zoo", "state"=>"Massachusetts", "facility"=>"Park", "zoo"=>{"name"=>"Franklin Park Zoo", "state"=>"Massachusetts", "facility"=>"Park"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Franklin Park Zoo"], ["state", "Massachusetts"], ["facility", "Park"], ["created_at", "2017-05-24 20:15:06.551991"], ["updated_at", "2017-05-24 20:15:06.551991"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.33ms)
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 16:15:31 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  [1m[36mZoo Load (0.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.34ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 16:15:56 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"Moose Hill Wildlife Sanctuary", "state"=>"Massachusetts", "facility"=>"Wildlife", "zoo"=>{"name"=>"Moose Hill Wildlife Sanctuary", "state"=>"Massachusetts", "facility"=>"Wildlife"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Moose Hill Wildlife Sanctuary"], ["state", "Massachusetts"], ["facility", "Wildlife"], ["created_at", "2017-05-24 20:15:56.964724"], ["updated_at", "2017-05-24 20:15:56.964724"]]
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.37ms)
+Completed 200 OK in 12ms (Views: 1.0ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 16:17:50 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.91ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 16:18:17 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"New England Aquarium", "state"=>"Massachusetts", "facility"=>"Aquarium", "zoo"=>{"name"=>"New England Aquarium", "state"=>"Massachusetts", "facility"=>"Aquarium"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "New England Aquarium"], ["state", "Massachusetts"], ["facility", "Aquarium"], ["created_at", "2017-05-24 20:18:17.305429"], ["updated_at", "2017-05-24 20:18:17.305429"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.34ms)
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 16:18:26 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.2ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 15:52:52", updated_at: "2017-05-24 15:52:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.7ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 1.2ms)
+
+
