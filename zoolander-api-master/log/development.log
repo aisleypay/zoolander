@@ -2617,3 +2617,2264 @@ No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", s
 Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 17:55:01 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 20:54:11", updated_at: "2017-05-24 20:54:11">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (0.85ms)
+Completed 200 OK in 20ms (Views: 16.1ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 17:56:55 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.0ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 20:54:11", updated_at: "2017-05-24 20:54:11">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.6ms)
+Completed 200 OK in 34ms (Views: 20.1ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 17:57:09 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 20:54:11", updated_at: "2017-05-24 20:54:11">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.47ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-24 17:57:56 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"Central Park Zoo", "state"=>"New York", "facility"=>"park", "zoo"=>{"name"=>"Central Park Zoo", "state"=>"New York", "facility"=>"park"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Central Park Zoo"], ["state", "New York"], ["facility", "park"], ["created_at", "2017-05-24 21:57:56.509419"], ["updated_at", "2017-05-24 21:57:56.509419"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.42ms)
+Completed 200 OK in 8ms (Views: 1.9ms | ActiveRecord: 1.9ms)
+
+
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(736764468130700730);[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddLatitudeAndLongitudeToZoos (20170525133905)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.6ms)[0m  [1m[35mALTER TABLE "zoos" ADD "latitude" float[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "zoos" ADD "longitude" float[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170525133905"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(736764468130700730)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-05-25 09:40:31 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nothinlkepaisley/.rvm/gems/ruby-2.3.1/gems/railties-5.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nothinlkepaisley/.rvm/gems/ruby-2.3.1/gems/railties-5.1.1/lib/rails/templates/rails/welcome/index.html.erb (5.8ms)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/zoos" for 127.0.0.1 at 2017-05-25 09:40:36 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/zoos"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 09:42:00 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.9ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-24 20:54:11", updated_at: "2017-05-24 20:54:11", latitude: nil, longitude: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.55ms)
+Completed 200 OK in 42ms (Views: 36.1ms | ActiveRecord: 26.5ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 09:42:25 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"BAMBAM", "state"=>"New York", "facility"=>"Stone Age", "zoo"=>{"name"=>"BAMBAM", "state"=>"New York", "facility"=>"Stone Age"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "BAMBAM"], ["state", "New York"], ["facility", "Stone Age"], ["created_at", "2017-05-25 13:42:25.375716"], ["updated_at", "2017-05-25 13:42:25.375716"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.39ms)
+Completed 200 OK in 10ms (Views: 2.2ms | ActiveRecord: 2.6ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(736764468130700730);[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(736764468130700730)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (5040.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "zoolander-api-master_development"[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (124.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "zoolander-api-master_development"[0m
+  [1m[35m (121.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "zoolander-api-master_test"[0m
+  [1m[35m (15.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(736764468130700730);[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateZoos (20170524154017)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "zoos" ("id" bigserial primary key, "name" character varying, "state" character varying, "facility" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170524154017"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddLatitudeAndLongitudeToZoos (20170525133905)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "zoos" ADD "latitude" float[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "zoos" ADD "longitude" float[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "zoos" ADD "address" character varying[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170525133905"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-05-25 13:43:57.798124"], ["updated_at", "2017-05-25 13:43:57.798124"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(736764468130700730)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 09:52:07 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.25ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 09:52:28 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "address") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Alabama Gulf Coast Zoo"], ["state", "Alabama"], ["facility", "Regular"], ["created_at", "2017-05-25 13:53:25.448943"], ["updated_at", "2017-05-25 13:53:25.448943"], ["address", "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "address") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Audubon Bird Sanctuary"], ["state", "Alabama"], ["facility", "Bird Sanctuary"], ["created_at", "2017-05-25 13:53:25.454017"], ["updated_at", "2017-05-25 13:53:25.454017"], ["address", "1201 Pawlings Rd, Audubon, PA 19403"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "address") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Alameda Park Zoo"], ["state", "New Mexico"], ["facility", "Park"], ["created_at", "2017-05-25 13:53:25.456353"], ["updated_at", "2017-05-25 13:53:25.456353"], ["address", "1321 N White Sands Blvd, Alamogordo, NM 88310"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "address") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Victory Ranch"], ["state", "New Mexico"], ["facility", "Horse Zoo"], ["created_at", "2017-05-25 13:53:25.459364"], ["updated_at", "2017-05-25 13:53:25.459364"], ["address", "NM-434, Mora, NM 87732"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "address") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "The Whale Museum"], ["state", "Washington"], ["facility", "Whales"], ["created_at", "2017-05-25 13:53:25.462341"], ["updated_at", "2017-05-25 13:53:25.462341"], ["address", "62 1st St, Friday Harbor, WA 98250"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 09:53:30 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.06ms)
+Completed 200 OK in 25ms (Views: 20.9ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 09:54:36 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.61ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 09:56:18 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"Houston Zoo", "state"=>"Texas", "facility"=>"City", "zoo"=>{"name"=>"Houston Zoo", "state"=>"Texas", "facility"=>"City"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Houston Zoo"], ["state", "Texas"], ["facility", "City"], ["created_at", "2017-05-25 13:56:18.934505"], ["updated_at", "2017-05-25 13:56:18.934505"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.4ms)
+Completed 200 OK in 9ms (Views: 2.2ms | ActiveRecord: 1.2ms)
+
+
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT  "zoos".* FROM "zoos" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT  "zoos".* FROM "zoos" ORDER BY "zoos"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:00:11 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"sdvdfb", "state"=>"sgvbnhmjiyjhfgdf", "facility"=>"fvdgnhmj,", "zoo"=>{"name"=>"sdvdfb", "state"=>"sgvbnhmjiyjhfgdf", "facility"=>"fvdgnhmj,"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "sdvdfb"], ["state", "sgvbnhmjiyjhfgdf"], ["facility", "fvdgnhmj,"], ["created_at", "2017-05-25 14:00:11.246082"], ["updated_at", "2017-05-25 14:00:11.246082"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (1.56ms)
+Completed 200 OK in 12ms (Views: 2.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:00:35 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"aFDSzbgfn", "state"=>"aCDVSbfzg", "facility"=>"aCDVSbfzdg", "zoo"=>{"name"=>"aFDSzbgfn", "state"=>"aCDVSbfzg", "facility"=>"aCDVSbfzdg"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "aFDSzbgfn"], ["state", "aCDVSbfzg"], ["facility", "aCDVSbfzdg"], ["created_at", "2017-05-25 14:00:35.341787"], ["updated_at", "2017-05-25 14:00:35.341787"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.28ms)
+Completed 200 OK in 8ms (Views: 1.6ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:01:50 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"qefwargvbsthndyju", "state"=>"aferghstry", "facility"=>"gwraehtsrjydtuk", "zoo"=>{"name"=>"qefwargvbsthndyju", "state"=>"aferghstry", "facility"=>"gwraehtsrjydtuk"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "qefwargvbsthndyju"], ["state", "aferghstry"], ["facility", "gwraehtsrjydtuk"], ["created_at", "2017-05-25 14:01:50.488631"], ["updated_at", "2017-05-25 14:01:50.488631"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.28ms)
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:02:30 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"wefaergtrh", "state"=>"ygraetshryjdtu", "facility"=>"gathsryjdt", "zoo"=>{"name"=>"wefaergtrh", "state"=>"ygraetshryjdtu", "facility"=>"gathsryjdt"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "wefaergtrh"], ["state", "ygraetshryjdtu"], ["facility", "gathsryjdt"], ["created_at", "2017-05-25 14:02:30.049020"], ["updated_at", "2017-05-25 14:02:30.049020"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.83ms)
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:03:10 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"aDSVzfbgn", "state"=>"mnhfdvs", "facility"=>"sacDVzbfgfnhm", "zoo"=>{"name"=>"aDSVzfbgn", "state"=>"mnhfdvs", "facility"=>"sacDVzbfgfnhm"}}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "aDSVzfbgn"], ["state", "mnhfdvs"], ["facility", "sacDVzbfgfnhm"], ["created_at", "2017-05-25 14:03:10.877219"], ["updated_at", "2017-05-25 14:03:10.877219"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.26ms)
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:06:43 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (6.84ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:13:28 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (5.65ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:15:46 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.98ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:19:46 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.2ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (9.8ms)
+Completed 200 OK in 18ms (Views: 15.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:21:29 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (6.16ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:21:45 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.1ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (6.53ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:31:38 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.98ms)
+Completed 200 OK in 115ms (Views: 99.1ms | ActiveRecord: 21.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:32:10 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (10.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.55ms)
+Completed 200 OK in 25ms (Views: 13.8ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:32:18 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.9ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (5.87ms)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:37:31 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (4.8ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (11.87ms)
+Completed 200 OK in 26ms (Views: 21.3ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:37:31 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.1ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.54ms)
+Completed 200 OK in 88ms (Views: 85.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:40:38 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.8ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (5.18ms)
+Completed 200 OK in 101ms (Views: 94.7ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:40:39 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (21.64ms)
+Completed 200 OK in 33ms (Views: 30.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:41:34 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.79ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:41:34 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.56ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:42:09 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.0ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.87ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:45:28 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.04ms)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:45:29 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.66ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:45:46 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.08ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:45:48 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.71ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:45:48 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.77ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:46:26 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (7.67ms)
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:46:26 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.44ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:47:01 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.05ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:47:01 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.95ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:47:16 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.27ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:47:16 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.1ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.83ms)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:48:34 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.06ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:48:34 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.83ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:50:43 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.84ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:50:43 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.11ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:51:24 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.8ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (7.09ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:51:24 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (6.2ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:51:50 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.59ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:51:50 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.97ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:52:01 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.26ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:52:01 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.97ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:52:13 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (11.6ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:52:13 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.96ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:52:46 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.84ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:52:46 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.73ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 10:57:03 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.59ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:06:34 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.81ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:08:45 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.04ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:08:45 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.2ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.97ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:08:45 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.71ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:09:37 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.43ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:09:37 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 13:53:25", updated_at: "2017-05-25 13:53:25", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.24ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.7ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (127.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "zoolander-api-master_development"[0m
+  [1m[35m (121.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "zoolander-api-master_test"[0m
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(736764468130700730);[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateZoos (20170524154017)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "zoos" ("id" bigserial primary key, "name" character varying, "state" character varying, "facility" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170524154017"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddLatitudeAndLongitudeToZoos (20170525133905)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "zoos" ADD "latitude" float[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "zoos" ADD "longitude" float[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "zoos" ADD "address" character varying[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170525133905"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-05-25 15:10:40.387171"], ["updated_at", "2017-05-25 15:10:40.387171"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(736764468130700730)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "address") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Alabama Gulf Coast Zoo"], ["state", "Alabama"], ["facility", "Regular"], ["created_at", "2017-05-25 15:10:46.012449"], ["updated_at", "2017-05-25 15:10:46.012449"], ["address", "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "address") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Audubon Bird Sanctuary"], ["state", "Alabama"], ["facility", "Bird Sanctuary"], ["created_at", "2017-05-25 15:10:46.015765"], ["updated_at", "2017-05-25 15:10:46.015765"], ["address", "1201 Pawlings Rd, Audubon, PA 19403"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "address") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Alameda Park Zoo"], ["state", "New Mexico"], ["facility", "Park"], ["created_at", "2017-05-25 15:10:46.017765"], ["updated_at", "2017-05-25 15:10:46.017765"], ["address", "1321 N White Sands Blvd, Alamogordo, NM 88310"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "address") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Victory Ranch"], ["state", "New Mexico"], ["facility", "Horse Zoo"], ["created_at", "2017-05-25 15:10:46.019994"], ["updated_at", "2017-05-25 15:10:46.019994"], ["address", "NM-434, Mora, NM 87732"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "address") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "The Whale Museum"], ["state", "Washington"], ["facility", "Whales"], ["created_at", "2017-05-25 15:10:46.021947"], ["updated_at", "2017-05-25 15:10:46.021947"], ["address", "62 1st St, Friday Harbor, WA 98250"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:11:01 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:10:46", updated_at: "2017-05-25 15:10:46", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.06ms)
+Completed 200 OK in 27ms (Views: 23.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:11:01 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:10:46", updated_at: "2017-05-25 15:10:46", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.06ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:11:51 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:10:46", updated_at: "2017-05-25 15:10:46", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.61ms)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:11:51 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.2ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:10:46", updated_at: "2017-05-25 15:10:46", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.19ms)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:13:10 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:10:46", updated_at: "2017-05-25 15:10:46", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.38ms)
+Completed 200 OK in 58ms (Views: 52.1ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:13:10 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.9ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:10:46", updated_at: "2017-05-25 15:10:46", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (13.53ms)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.9ms)
+
+
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT  "zoos".* FROM "zoos" ORDER BY "zoos"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:17:30 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:10:46", updated_at: "2017-05-25 15:10:46", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.11ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:17:30 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:10:46", updated_at: "2017-05-25 15:10:46", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.24ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:22:54 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:10:46", updated_at: "2017-05-25 15:10:46", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.42ms)
+Completed 200 OK in 44ms (Views: 38.3ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:22:54 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:10:46", updated_at: "2017-05-25 15:10:46", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.9ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:23:09 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:10:46", updated_at: "2017-05-25 15:10:46", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.49ms)
+Completed 200 OK in 16ms (Views: 13.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:23:09 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:10:46", updated_at: "2017-05-25 15:10:46", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.63ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:24:02 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"Queens Zoo", "state"=>"New York", "facility"=>"City", "address"=>"53-51 111th St, Corona, NY 11368", "zoo"=>{"name"=>"Queens Zoo", "state"=>"New York", "facility"=>"City", "address"=>"53-51 111th St, Corona, NY 11368"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Queens Zoo"], ["state", "New York"], ["facility", "City"], ["created_at", "2017-05-25 15:24:03.988219"], ["updated_at", "2017-05-25 15:24:03.988219"], ["latitude", 40.74366], ["longitude", -73.8499582], ["address", "53-51 111th St, Corona, NY 11368"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.8ms)
+Completed 200 OK in 1030ms (Views: 2.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:24:10 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.9ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:10:46", updated_at: "2017-05-25 15:10:46", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.9ms)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:24:10 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:10:46", updated_at: "2017-05-25 15:10:46", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.36ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:39:58 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.8ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:10:46", updated_at: "2017-05-25 15:10:46", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.58ms)
+Completed 200 OK in 52ms (Views: 45.6ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:39:58 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:10:46", updated_at: "2017-05-25 15:10:46", latitude: nil, longitude: nil, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.13ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT  "zoos".* FROM "zoos" ORDER BY "zoos"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (125.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "zoolander-api-master_development"[0m
+  [1m[35m (121.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "zoolander-api-master_test"[0m
+  [1m[35m (15.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(736764468130700730);[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateZoos (20170524154017)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "zoos" ("id" bigserial primary key, "name" character varying, "state" character varying, "facility" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170524154017"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddLatitudeAndLongitudeToZoos (20170525133905)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "zoos" ADD "latitude" float[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "zoos" ADD "longitude" float[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "zoos" ADD "address" character varying[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170525133905"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-05-25 15:45:43.948469"], ["updated_at", "2017-05-25 15:45:43.948469"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(736764468130700730)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Creating scope :geocoded. Overwriting existing method Zoo.geocoded.
+Creating scope :not_geocoded. Overwriting existing method Zoo.not_geocoded.
+Creating scope :not_reverse_geocoded. Overwriting existing method Zoo.not_reverse_geocoded.
+Creating scope :near. Overwriting existing method Zoo.near.
+Creating scope :within_bounding_box. Overwriting existing method Zoo.within_bounding_box.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Alabama Gulf Coast Zoo"], ["state", "Alabama"], ["facility", "Regular"], ["created_at", "2017-05-25 15:45:56.914222"], ["updated_at", "2017-05-25 15:45:56.914222"], ["latitude", 30.26254399999999], ["longitude", -87.686154], ["address", "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Audubon Bird Sanctuary"], ["state", "Alabama"], ["facility", "Bird Sanctuary"], ["created_at", "2017-05-25 15:45:57.690657"], ["updated_at", "2017-05-25 15:45:57.690657"], ["latitude", 40.1227842], ["longitude", -75.443152], ["address", "1201 Pawlings Rd, Audubon, PA 19403"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Alameda Park Zoo"], ["state", "New Mexico"], ["facility", "Park"], ["created_at", "2017-05-25 15:45:58.412094"], ["updated_at", "2017-05-25 15:45:58.412094"], ["latitude", 32.9005417], ["longitude", -105.9610872], ["address", "1321 N White Sands Blvd, Alamogordo, NM 88310"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Victory Ranch"], ["state", "New Mexico"], ["facility", "Horse Zoo"], ["created_at", "2017-05-25 15:45:59.123814"], ["updated_at", "2017-05-25 15:45:59.123814"], ["latitude", 36.0055553], ["longitude", -105.2929861], ["address", "NM-434, Mora, NM 87732"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "The Whale Museum"], ["state", "Washington"], ["facility", "Whales"], ["created_at", "2017-05-25 15:46:00.352881"], ["updated_at", "2017-05-25 15:46:00.352881"], ["latitude", 48.5357541], ["longitude", -123.0172436], ["address", "62 1st St, Friday Harbor, WA 98250"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Creating scope :geocoded. Overwriting existing method Zoo.geocoded.
+Creating scope :not_geocoded. Overwriting existing method Zoo.not_geocoded.
+Creating scope :not_reverse_geocoded. Overwriting existing method Zoo.not_reverse_geocoded.
+Creating scope :near. Overwriting existing method Zoo.near.
+Creating scope :within_bounding_box. Overwriting existing method Zoo.within_bounding_box.
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT  "zoos".* FROM "zoos" ORDER BY "zoos"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:46:39 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Creating scope :geocoded. Overwriting existing method Zoo.geocoded.
+Creating scope :not_geocoded. Overwriting existing method Zoo.not_geocoded.
+Creating scope :not_reverse_geocoded. Overwriting existing method Zoo.not_reverse_geocoded.
+Creating scope :near. Overwriting existing method Zoo.near.
+Creating scope :within_bounding_box. Overwriting existing method Zoo.within_bounding_box.
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (0.94ms)
+Completed 200 OK in 27ms (Views: 23.0ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:46:39 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.21ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:46:44 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.53ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:46:44 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.71ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mZoo Load (1.2ms)[0m  [1m[34mSELECT  "zoos".* FROM "zoos" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:47:39 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.9ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.51ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:47:39 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.95ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:48:41 -0400
+Creating scope :geocoded. Overwriting existing method Zoo.geocoded.
+Creating scope :not_geocoded. Overwriting existing method Zoo.not_geocoded.
+Creating scope :not_reverse_geocoded. Overwriting existing method Zoo.not_reverse_geocoded.
+Creating scope :near. Overwriting existing method Zoo.near.
+Creating scope :within_bounding_box. Overwriting existing method Zoo.within_bounding_box.
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.16ms)
+Completed 200 OK in 97ms (Views: 91.4ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:48:41 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.8ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.69ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:49:14 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.35ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:49:14 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.9ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:50:07 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.16ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:50:07 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.9ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.76ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:52:54 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (21.36ms)
+Completed 200 OK in 129ms (Views: 118.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:52:54 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.76ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:53:39 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (21.63ms)
+Completed 200 OK in 29ms (Views: 28.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:53:39 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (6.63ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:56:35 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.49ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:56:35 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.6ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:58:48 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.93ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 11:58:48 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (5.77ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 12:03:12 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.16ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 12:03:12 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.7ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 12:10:03 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (10.56ms)
+Completed 200 OK in 75ms (Views: 71.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 12:10:03 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.8ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.07ms)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 12:10:15 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.75ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 12:10:15 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.9ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.14ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 12:10:29 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.0ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.06ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 12:10:29 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.18ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 12:13:43 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.27ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 12:13:43 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.94ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 12:13:56 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.8ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.67ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 12:13:56 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.83ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 12:14:07 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.02ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 12:14:07 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.9ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.06ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 12:19:04 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.16ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 12:19:04 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.19ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 12:19:51 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.09ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 12:19:51 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.35ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 12:19:53 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.52ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 12:19:53 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.27ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 12:21:30 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.93ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 12:21:30 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.06ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:15:55 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (6.24ms)
+Completed 200 OK in 46ms (Views: 38.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:15:55 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.9ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.29ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:16:18 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"Central Park Zoo", "state"=>"New York", "facility"=>"City", "address"=>"Central Park, NY", "zoo"=>{"name"=>"Central Park Zoo", "state"=>"New York", "facility"=>"City", "address"=>"Central Park, NY"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Central Park Zoo"], ["state", "New York"], ["facility", "City"], ["created_at", "2017-05-25 17:16:22.042356"], ["updated_at", "2017-05-25 17:16:22.042356"], ["latitude", 40.7828647], ["longitude", -73.9653551], ["address", "Central Park, NY"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (1.4ms)
+Completed 200 OK in 3108ms (Views: 5.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:16:22 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.09ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:16:41 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.85ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:16:41 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.9ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.85ms)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:17:16 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (8.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.4ms)
+Completed 200 OK in 20ms (Views: 11.4ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:17:16 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.35ms)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:17:39 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (5.73ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:17:39 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (3.2ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.5ms)
+Completed 200 OK in 15ms (Views: 11.8ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:18:16 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (5.23ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:18:16 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.48ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:18:55 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"Bronx Zoo", "state"=>"New York", "facility"=>"City", "address"=>"2300 Southern Blvd Bronx, NY", "zoo"=>{"name"=>"Bronx Zoo", "state"=>"New York", "facility"=>"City", "address"=>"2300 Southern Blvd Bronx, NY"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Bronx Zoo"], ["state", "New York"], ["facility", "City"], ["created_at", "2017-05-25 17:18:56.312469"], ["updated_at", "2017-05-25 17:18:56.312469"], ["latitude", 40.8502883], ["longitude", -73.8786113], ["address", "2300 Southern Blvd Bronx, NY"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.72ms)
+Completed 200 OK in 925ms (Views: 1.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:18:56 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.45ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:19:01 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.08ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:19:01 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.97ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:19:25 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.1ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (6.03ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:19:25 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.2ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (5.49ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:20:37 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.49ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:20:37 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.98ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.5ms)
+
+
+Creating scope :geocoded. Overwriting existing method Zoo.geocoded.
+Creating scope :not_geocoded. Overwriting existing method Zoo.not_geocoded.
+Creating scope :not_reverse_geocoded. Overwriting existing method Zoo.not_reverse_geocoded.
+Creating scope :near. Overwriting existing method Zoo.near.
+Creating scope :within_bounding_box. Overwriting existing method Zoo.within_bounding_box.
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT  "zoos".* FROM "zoos" ORDER BY "zoos"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:21:58 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"Blank Park Zoo", "state"=>"Iowa", "facility"=>"Zoological Park", "address"=>"7401 SW 9th St, Des Moines, IA 50315", "zoo"=>{"name"=>"Blank Park Zoo", "state"=>"Iowa", "facility"=>"Zoological Park", "address"=>"7401 SW 9th St, Des Moines, IA 50315"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Blank Park Zoo"], ["state", "Iowa"], ["facility", "Zoological Park"], ["created_at", "2017-05-25 17:22:01.373739"], ["updated_at", "2017-05-25 17:22:01.373739"], ["latitude", 41.5197844], ["longitude", -93.6251551], ["address", "7401 SW 9th St, Des Moines, IA 50315"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.3ms)
+Completed 200 OK in 3093ms (Views: 0.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:22:01 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (1.67ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:22:29 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.34ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:22:29 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.13ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:22:44 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.94ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:22:44 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (10.8ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:23:34 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"Reptile Gardens", "state"=>"South Dakota", "facility"=>"wildlife", "address"=>"8955 S Highway 16, Rapid City, SD 57702-6577", "zoo"=>{"name"=>"Reptile Gardens", "state"=>"South Dakota", "facility"=>"wildlife", "address"=>"8955 S Highway 16, Rapid City, SD 57702-6577"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Reptile Gardens"], ["state", "South Dakota"], ["facility", "wildlife"], ["created_at", "2017-05-25 17:23:36.127116"], ["updated_at", "2017-05-25 17:23:36.127116"], ["latitude", 43.99092950000001], ["longitude", -103.2711409], ["address", "8955 S Highway 16, Rapid City, SD 57702-6577"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.35ms)
+Completed 200 OK in 1593ms (Views: 0.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:23:36 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.94ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:27:03 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"Denver Zoo", "state"=>"Colorado", "facility"=>"City", "address"=>"2300 Steele Street Denver, CO 80205-4899", "zoo"=>{"name"=>"Denver Zoo", "state"=>"Colorado", "facility"=>"City", "address"=>"2300 Steele Street Denver, CO 80205-4899"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Denver Zoo"], ["state", "Colorado"], ["facility", "City"], ["created_at", "2017-05-25 17:27:06.171163"], ["updated_at", "2017-05-25 17:27:06.171163"], ["latitude", 39.7502165], ["longitude", -104.9501058], ["address", "2300 Steele Street Denver, CO 80205-4899"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.36ms)
+Completed 200 OK in 2551ms (Views: 1.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:27:06 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.42ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:27:48 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (2.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.89ms)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:27:48 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.77ms)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:28:34 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"Alaska Zoo", "state"=>"Alaska", "facility"=>"State", "address"=>"4731 O'Malley Rd, Anchorage, AK 99507", "zoo"=>{"name"=>"Alaska Zoo", "state"=>"Alaska", "facility"=>"State", "address"=>"4731 O'Malley Rd, Anchorage, AK 99507"}}
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Alaska Zoo"], ["state", "Alaska"], ["facility", "State"], ["created_at", "2017-05-25 17:28:36.172372"], ["updated_at", "2017-05-25 17:28:36.172372"], ["latitude", 61.1235902], ["longitude", -149.7910166], ["address", "4731 O'Malley Rd, Anchorage, AK 99507"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.37ms)
+Completed 200 OK in 1457ms (Views: 1.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:28:36 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.82ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:29:42 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"Maine Wildlife Park", "state"=>"Maine", "facility"=>"wildlife", "address"=>"56 Game Farm Road, Route 26, Gray, ME 04039", "zoo"=>{"name"=>"Maine Wildlife Park", "state"=>"Maine", "facility"=>"wildlife", "address"=>"56 Game Farm Road, Route 26, Gray, ME 04039"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Maine Wildlife Park"], ["state", "Maine"], ["facility", "wildlife"], ["created_at", "2017-05-25 17:29:43.262687"], ["updated_at", "2017-05-25 17:29:43.262687"], ["latitude", 43.9280448], ["longitude", -70.3501338], ["address", "56 Game Farm Road, Route 26, Gray, ME 04039"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (1.12ms)
+Completed 200 OK in 817ms (Views: 2.9ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:29:43 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (12.25ms)
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:29:55 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (3.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (5.81ms)
+Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:29:55 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (7.9ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:30:23 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"qefwrdgfnhg", "state"=>"wfargethrj", "facility"=>"fwrge", "address"=>"New York", "zoo"=>{"name"=>"qefwrdgfnhg", "state"=>"wfargethrj", "facility"=>"fwrge", "address"=>"New York"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "qefwrdgfnhg"], ["state", "wfargethrj"], ["facility", "fwrge"], ["created_at", "2017-05-25 17:30:23.891615"], ["updated_at", "2017-05-25 17:30:23.891615"], ["latitude", 40.7127837], ["longitude", -74.0059413], ["address", "New York"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.61ms)
+Completed 200 OK in 78ms (Views: 1.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:30:23 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.51ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:31:27 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (5.72ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:31:27 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (5.49ms)
+Completed 200 OK in 15ms (Views: 11.8ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:32:26 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"efrgtrhytjuyki", "state"=>";ilythrgfd", "facility"=>"wqefwgraehtrjytku", "address"=>"Sunrise, FL", "zoo"=>{"name"=>"efrgtrhytjuyki", "state"=>";ilythrgfd", "facility"=>"wqefwgraehtrjytku", "address"=>"Sunrise, FL"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "efrgtrhytjuyki"], ["state", ";ilythrgfd"], ["facility", "wqefwgraehtrjytku"], ["created_at", "2017-05-25 17:32:29.961291"], ["updated_at", "2017-05-25 17:32:29.961291"], ["latitude", 26.1669711], ["longitude", -80.25659499999999], ["address", "Sunrise, FL"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.26ms)
+Completed 200 OK in 3950ms (Views: 0.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:32:29 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.39ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:32:48 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"asgvnfhm", "state"=>"mnhgdcs", "facility"=>"xsdnhmju,k", "address"=>"Miami, FL", "zoo"=>{"name"=>"asgvnfhm", "state"=>"mnhgdcs", "facility"=>"xsdnhmju,k", "address"=>"Miami, FL"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "asgvnfhm"], ["state", "mnhgdcs"], ["facility", "xsdnhmju,k"], ["created_at", "2017-05-25 17:32:48.174260"], ["updated_at", "2017-05-25 17:32:48.174260"], ["latitude", 25.7616798], ["longitude", -80.1917902], ["address", "Miami, FL"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.27ms)
+Completed 200 OK in 40ms (Views: 1.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:32:48 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.44ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:33:00 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.79ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:33:00 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.64ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:33:34 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"dwv", "state"=>"vcsx", "facility"=>"scadvsfbd", "address"=>"nfdc", "zoo"=>{"name"=>"dwv", "state"=>"vcsx", "facility"=>"scadvsfbd", "address"=>"nfdc"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "dwv"], ["state", "vcsx"], ["facility", "scadvsfbd"], ["created_at", "2017-05-25 17:33:36.187395"], ["updated_at", "2017-05-25 17:33:36.187395"], ["latitude", 50.7231155], ["longitude", -1.5632811], ["address", "nfdc"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.47ms)
+Completed 200 OK in 1253ms (Views: 1.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:33:36 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.8ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (12.02ms)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:34:09 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"qdaefwrgstdhy", "state"=>"ikyjnbtgvfr", "facility"=>"wdefgrth", "address"=>"jybhtf", "zoo"=>{"name"=>"qdaefwrgstdhy", "state"=>"ikyjnbtgvfr", "facility"=>"wdefgrth", "address"=>"jybhtf"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "address") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "qdaefwrgstdhy"], ["state", "ikyjnbtgvfr"], ["facility", "wdefgrth"], ["created_at", "2017-05-25 17:34:10.542572"], ["updated_at", "2017-05-25 17:34:10.542572"], ["address", "jybhtf"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.28ms)
+Completed 200 OK in 1147ms (Views: 0.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:34:10 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.82ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:34:16 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (2.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (11.37ms)
+Completed 200 OK in 19ms (Views: 16.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:34:16 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (5.78ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:52:31 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (5.67ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:52:31 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (6.8ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:52:46 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"i,tyj", "state"=>"reth", "facility"=>"rgthyj", "address"=>"France", "zoo"=>{"name"=>"i,tyj", "state"=>"reth", "facility"=>"rgthyj", "address"=>"France"}}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "i,tyj"], ["state", "reth"], ["facility", "rgthyj"], ["created_at", "2017-05-25 17:52:47.289883"], ["updated_at", "2017-05-25 17:52:47.289883"], ["latitude", 46.227638], ["longitude", 2.213749], ["address", "France"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.31ms)
+Completed 200 OK in 1057ms (Views: 0.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:52:47 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.19ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:53:28 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (13.38ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:53:28 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.2ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:53:51 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.83ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:53:51 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.06ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:54:10 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"ghbgs", "state"=>"wgrtrh", "facility"=>"wgaeth", "address"=>"Canada", "zoo"=>{"name"=>"ghbgs", "state"=>"wgrtrh", "facility"=>"wgaeth", "address"=>"Canada"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "ghbgs"], ["state", "wgrtrh"], ["facility", "wgaeth"], ["created_at", "2017-05-25 17:54:10.603609"], ["updated_at", "2017-05-25 17:54:10.603609"], ["latitude", 56.130366], ["longitude", -106.346771], ["address", "Canada"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.67ms)
+Completed 200 OK in 29ms (Views: 1.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:54:10 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.46ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:54:33 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.8ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.89ms)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:54:34 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (2.95ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:55:23 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"aVDSFBdz", "state"=>"nfbdv", "facility"=>"sacdvd", "address"=>"China", "zoo"=>{"name"=>"aVDSFBdz", "state"=>"nfbdv", "facility"=>"sacdvd", "address"=>"China"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "aVDSFBdz"], ["state", "nfbdv"], ["facility", "sacdvd"], ["created_at", "2017-05-25 17:55:23.994091"], ["updated_at", "2017-05-25 17:55:23.994091"], ["latitude", 35.86166], ["longitude", 104.195397], ["address", "China"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.42ms)
+Completed 200 OK in 44ms (Views: 1.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:55:24 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (3.14ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 13:59:43 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Creating scope :geocoded. Overwriting existing method Zoo.geocoded.
+Creating scope :not_geocoded. Overwriting existing method Zoo.not_geocoded.
+Creating scope :not_reverse_geocoded. Overwriting existing method Zoo.not_reverse_geocoded.
+Creating scope :near. Overwriting existing method Zoo.near.
+Creating scope :within_bounding_box. Overwriting existing method Zoo.within_bounding_box.
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.31ms)
+Completed 200 OK in 30ms (Views: 25.9ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:00:00 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.3ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (15.56ms)
+Completed 200 OK in 65ms (Views: 50.5ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:00:00 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (11.19ms)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:00:52 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (13.53ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:00:52 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (8.7ms)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:01:07 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"jtyht", "state"=>"qgerfd", "facility"=>"fgtry", "address"=>"Africa", "zoo"=>{"name"=>"jtyht", "state"=>"qgerfd", "facility"=>"fgtry", "address"=>"Africa"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "jtyht"], ["state", "qgerfd"], ["facility", "fgtry"], ["created_at", "2017-05-25 18:01:08.708284"], ["updated_at", "2017-05-25 18:01:08.708284"], ["latitude", -8.783195], ["longitude", 34.508523], ["address", "Africa"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.61ms)
+Completed 200 OK in 1550ms (Views: 2.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:01:08 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.04ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:03:23 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (10.91ms)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:03:24 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.8ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (20.85ms)
+Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:07:31 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"nvldfmx", "state"=>"oewnv", "facility"=>"ewrgbtntm", "address"=>"Shanghai, China", "zoo"=>{"name"=>"nvldfmx", "state"=>"oewnv", "facility"=>"ewrgbtntm", "address"=>"Shanghai, China"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "nvldfmx"], ["state", "oewnv"], ["facility", "ewrgbtntm"], ["created_at", "2017-05-25 18:07:31.052006"], ["updated_at", "2017-05-25 18:07:31.052006"], ["latitude", 31.2303904], ["longitude", 121.4737021], ["address", "Shanghai, China"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.49ms)
+Completed 200 OK in 51ms (Views: 1.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:10:32 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (12.43ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:10:32 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (15.33ms)
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:10:48 -0400
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"cgvhbj", "state"=>"hvgjbhjn", "facility"=>"ght", "address"=>"London", "zoo"=>{"name"=>"cgvhbj", "state"=>"hvgjbhjn", "facility"=>"ght", "address"=>"London"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "cgvhbj"], ["state", "hvgjbhjn"], ["facility", "ght"], ["created_at", "2017-05-25 18:10:48.740416"], ["updated_at", "2017-05-25 18:10:48.740416"], ["latitude", 51.5073509], ["longitude", -0.1277583], ["address", "London"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.32ms)
+Completed 200 OK in 68ms (Views: 0.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:10:51 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.8ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (25.02ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:25:38 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (1.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.12ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:25:38 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.22ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:42:20 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (5.5ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:42:20 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.16ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:42:34 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.8ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (19.23ms)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:42:34 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (7.97ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:43:01 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (8.81ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:43:01 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.4ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.63ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:43:44 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (9.46ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:43:44 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.6ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.3ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:44:24 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.8ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (10.73ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:44:24 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.8ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (5.36ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:44:51 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (4.55ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:44:51 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.5ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (5.01ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:45:59 -0400
+Creating scope :geocoded. Overwriting existing method Zoo.geocoded.
+Creating scope :not_geocoded. Overwriting existing method Zoo.not_geocoded.
+Creating scope :not_reverse_geocoded. Overwriting existing method Zoo.not_reverse_geocoded.
+Creating scope :near. Overwriting existing method Zoo.near.
+Creating scope :within_bounding_box. Overwriting existing method Zoo.within_bounding_box.
+Processing by Api::V1::ZoosController#create as HTML
+  Parameters: {"name"=>"RANDOM", "state"=>"RANDA", "facility"=>"wildlife", "address"=>"New Zealand", "zoo"=>{"name"=>"RANDOM", "state"=>"RANDA", "facility"=>"wildlife", "address"=>"New Zealand"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "zoos" ("name", "state", "facility", "created_at", "updated_at", "latitude", "longitude", "address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "RANDOM"], ["state", "RANDA"], ["facility", "wildlife"], ["created_at", "2017-05-25 18:46:00.131359"], ["updated_at", "2017-05-25 18:46:00.131359"], ["latitude", -40.900557], ["longitude", 174.885971], ["address", "New Zealand"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Zoo (0.33ms)
+Completed 200 OK in 104ms (Views: 8.0ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/api/v1/zoos" for 127.0.0.1 at 2017-05-25 14:46:04 -0400
+Processing by Api::V1::ZoosController#index as HTML
+  Parameters: {"zoo"=>{}}
+  [1m[36mZoo Load (0.7ms)[0m  [1m[34mSELECT "zoos".* FROM "zoos"[0m
+No serializer found for resource: #<Zoo id: 1, name: "Alabama Gulf Coast Zoo", state: "Alabama", facility: "Regular", created_at: "2017-05-25 15:45:56", updated_at: "2017-05-25 15:45:56", latitude: 30.262544, longitude: -87.686154, address: "1204 Gulf Shores Pkwy, Gulf Shores, AL 36542">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Zoo::ActiveRecord_Relation (10.77ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.7ms)
+
+

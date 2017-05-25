@@ -4,7 +4,7 @@ class CreateZoos < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :state
       t.string :facility
-
+      
       t.timestamps
     end
   end

@@ -1,3 +1,3 @@
 class ZoosSerializer < ActiveModel::Serializer
-  attributes :name, :state, :facility
+  attributes :name, :state, :facility, :address, :latitude, :longitude
 end

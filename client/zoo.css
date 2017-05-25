@@ -1,0 +1,13 @@
+#background {
+  background-image: url("public/banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  text-align: center;
+}
+
+#form {
+  color: white;
+}

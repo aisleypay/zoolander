@@ -1,7 +1,7 @@
 class Api::V1::ZoosController < ApplicationController
   def index
     zoos = Zoo.all
-    render json: zoos, only: [:id, :name, :state, :facility]
+    render json: zoos, only: [:id, :name, :state, :facility, :address, :longitude, :latitude]
   end
 
   def new
@@ -15,6 +15,6 @@ class Api::V1::ZoosController < ApplicationController
   private
 
   def zoo_params
-    params.require(:zoo).permit(:name, :state, :facility)
+    params.require(:zoo).permit(:name, :state, :facility, :address, :longitude, :latitude)
   end
 end
